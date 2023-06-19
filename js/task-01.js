@@ -1,11 +1,24 @@
-const categories = document.querySelector('#ul.categories'); // find Ul in document with id=categories
-const items = document.querySelectorAll('li.item');// find all elements with class item
-const categoryCount = items.length; // find count of categories
-console.log('Number of categories:', categoryCount);// display Number of categories
+// const categories = document.querySelector('#categories');
+// const items = document.querySelectorAll('.item');
+// const categoryCount = items.length;
+// console.log('Number of categories:', categoryCount);
 
-items.forEach((item) => {
-    const header = item.querySelector('h2').textContent;// take text from h2
-    const elementsCount = item.querySelectorAll('li').length; //take count of element
-    console.log('Category:', header); // display header
-    console.log('Elements:', elementsCount); // display count of element this category
+// items.forEach((item) => {
+//     const header = item.querySelector('h2').textContent;
+//     const elementsCount = item.querySelectorAll('li').length;
+//     console.log('Category:', header);
+//     console.log('Elements:', elementsCount);
+// });
+
+const categoriesList = document.querySelector('#categories');
+const categories = categoriesList.querySelectorAll('.item');
+
+console.log('Number of categories:', categories.length);
+
+categories.forEach((category) => {
+    const categoryName = category.querySelector('h2').textContent;
+    const elements = category.querySelectorAll('li');
+
+    console.log('Category:', categoryName);
+    console.log('Elements:', elements.length);
 });
